@@ -2,5 +2,9 @@
 
 }
 #assignEmployee {
-    display : none;
+
+}
+
+#addButton {
+    margin-bottom : 30px;
 }

@@ -1,5 +1,8 @@
 $( document ).ready(function() {
 
+    $("#makeEmployees").hide();
+    $("#addEmployee").hide();
+
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
@@ -26,7 +29,7 @@ $( document ).ready(function() {
         $("#clientSidePoints").text("Client-Side Points: " + clientSidePoints);
         $("#serverSidePoints").text("Server-Side Points: " + serverSidePoints);
 
-        $("#assignEmployee").show();
+        $("#makeEmployees").show();
 
     });
 
@@ -46,9 +49,9 @@ $( document ).ready(function() {
                 i++;
             }
 
-            $("#frontEndTotal").text("Front End: " + frontEndTotal);
-            $("#clientSideTotal").text("Client Side: " + clientSideTotal);
-            $("#serverSideTotal").text("Server Side: " + serverSideTotal);
+            $("#frontEndTotal").text("Front-End: " + frontEndTotal);
+            $("#clientSideTotal").text("Client-Side: " + clientSideTotal);
+            $("#serverSideTotal").text("Server-Side: " + serverSideTotal);
 
             // calculate sprint
             sprintArray.push(Math.ceil(frontEndPoints / frontEndTotal));
@@ -59,8 +62,9 @@ $( document ).ready(function() {
 
             $("#sprintValue").text("Sprints: " + sprintValue);
 
-            $("#addEmployee").append("<button id='addButton'>Add Employee</button><br />");
-
+            //$("#addEmployee").append("<button id='addButton'>Add Employee</button><br />");
+            $("#addEmployee").show();
+            $("#makeEmployees").prop("disabled", true);
         });
     });
 
@@ -88,7 +92,7 @@ $( document ).ready(function() {
 
             if (sprintValue == 1) {
                 $("#sprintValue").css("color", "#F00").css("font-weight", "bold");
-                $("#addEmployee").prop("disabled", true);
+                $("#addButton").prop("disabled", true);
             }
             $("#sprintValue").text("Sprints: " + sprintValue);
 
